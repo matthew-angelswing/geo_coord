@@ -628,12 +628,12 @@ module Geo
       lat = (
         opts[:latd].to_i +
         opts[:latm].to_i / 60.0 +
-        opts[:lats].to_i / 3600.0
+        opts[:lats].to_f / 3600.0
       ) * guess_sign(opts[:lath], LATH)
       lng = (
         opts[:lngd].to_i +
         opts[:lngm].to_i / 60.0 +
-        opts[:lngs].to_i / 3600.0
+        opts[:lngs].to_f / 3600.0
       ) * guess_sign(opts[:lngh], LNGH)
       _init(lat, lng)
     end
